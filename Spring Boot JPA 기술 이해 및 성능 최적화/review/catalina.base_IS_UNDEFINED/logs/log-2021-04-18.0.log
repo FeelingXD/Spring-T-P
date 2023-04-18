@@ -1,0 +1,1 @@
+2021-04-18 03:07:40.507 DEBUG 73125 --- [nnection-reaper] h.i.c.PoolingHttpClientConnectionManager : Closing connections idle longer than 60000 MILLISECONDS

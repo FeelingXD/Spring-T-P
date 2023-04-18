@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chicken.review.login.mapper.ReviewMapper">
+
+	
+
+	<select id="getReviewList"  parameterType="String"  resultType="com.chicken.review.login.vo.ReviewVO">
+		
+		select 
+			*
+		from
+			review
+			
+	</select>
+	
+	<update id="insertReview"  parameterType="com.chicken.review.login.vo.ReviewVO"  >
+		
+		INSERT INTO review(
+		  userId,
+		  title,
+		  content,
+		  createDt,
+		  imageUrl
+		) VALUES (
+		  #{userId},
+		  #{title},
+		  #{content},
+		  now(),
+		  #{imageUrl}
+		)
+			
+	</update>
+	
+	
+	
+	<update id="updateReview"  parameterType="com.chicken.review.login.vo.ReviewVO"  >
+		
+		
+		UPDATE review
+		SET 
+		  userId = #{userId},
+		  title = #{title},
+		  content = #{content},
+		  updateDt = now(),
+		  imageUrl = #{imageUrl}
+		WHERE 
+		  seq = #{seq}
+			
+	</update>
+
+	
+</mapper>
